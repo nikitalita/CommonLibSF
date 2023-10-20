@@ -120,6 +120,11 @@ namespace RE::Offset
 		inline constexpr REL::ID Free{ 34032 };
 	}
 
+	namespace ObjectBindPolicy
+	{
+		inline constexpr REL::ID BindObject{ 195981 };
+	}
+
 	namespace PlayerCamera
 	{
 		inline constexpr REL::ID singleton{ 878523 };
