@@ -1191,6 +1191,16 @@ namespace SFSE::WinAPI
 		const void*  a_buffer,
 		std::size_t  a_bufferLen,
 		std::size_t* a_bufferWritten) noexcept;
+
+	void _assert(
+		char const* message,
+		char const* filename,
+		unsigned    line);
+
+	void _wassert(
+		wchar_t const* message,
+		wchar_t const* filename,
+		unsigned       line);
 }
 
 #endif  // _INC_WINAPIFAMILY

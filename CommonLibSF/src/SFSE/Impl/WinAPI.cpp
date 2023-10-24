@@ -34,6 +34,11 @@
 
 extern "C" IMAGE_DOS_HEADER __ImageBase;
 
+// forward declare here so that the signature is availible even for non-debug builds
+_ACRTIMP void __cdecl _wassert(_In_z_ wchar_t const* _Message,
+	_In_z_ wchar_t const*                            _File,
+	_In_ unsigned                                    _Line);
+
 namespace SFSE::WinAPI
 {
 	bool CloseHandle(
@@ -1028,5 +1033,10 @@ namespace SFSE::WinAPI
 				a_buffer,
 				a_bufferLen,
 				a_bufferWritten));
+	}
+
+	void _wassert(wchar_t const* message, wchar_t const* filename, unsigned line)
+	{
+		::_wassert(message, filename, line);
 	}
 }
